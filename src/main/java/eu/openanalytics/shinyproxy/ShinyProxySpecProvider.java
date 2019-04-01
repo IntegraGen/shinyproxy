@@ -97,7 +97,7 @@ public class ShinyProxySpecProvider implements IProxySpecProvider {
 		cSpec.setMemory(from.getContainerMemory());
 		cSpec.setPrivileged(from.isContainerPrivileged());
 		cSpec.setSettings(from.getContainerSettings());
-		
+
 		Map<String, Integer> portMapping = new HashMap<>();
 		if (from.getPort() > 0) {
 			portMapping.put("default", from.getPort());
@@ -129,7 +129,7 @@ public class ShinyProxySpecProvider implements IProxySpecProvider {
 		private String containerMemory;
 		private boolean containerPrivileged;
 		private Map<String,String> containerSettings;
-		
+
 		private int port;
 		private String[] accessGroups;
 

@@ -74,7 +74,7 @@ public class AppController extends BaseController {
 		return response;
 	}
 	
-	@RequestMapping(value="/app_direct/**", method=RequestMethod.GET)
+	@RequestMapping(value="/app_direct/**")
 	public void appDirect(HttpServletRequest request, HttpServletResponse response) {
 		Proxy proxy = getOrStart(request);
 		String mapping = getProxyEndpoint(proxy);
@@ -109,7 +109,7 @@ public class AppController extends BaseController {
 		String queryString = request.getQueryString();
 		queryString = (queryString == null) ? "" : "?" + queryString;
 		
-		String containerPath = getContextPath() + "app_direct/" + appName + environment.getProperty("proxy.landing-page", "/") + queryString;
+		String containerPath = getContextPath() + "app_direct/" + appName + "/" + queryString;
 		return containerPath;
 	}
 }
